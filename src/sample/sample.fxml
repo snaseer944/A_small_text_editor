@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+
+<BorderPane prefHeight="600.0" prefWidth="800.0"
+            xmlns="http://javafx.com/javafx/16"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="sample.EditController">
+
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <Menu text="File">
+            <MenuItem text="Save" onAction="#onSave" />
+            <MenuItem text="Open" onAction="#onOpen" />
+            <MenuItem text="Close" onAction="#onClose" />
+            </Menu>
+
+           <Menu text="Edit">
+               <MenuItem text="Cut" onAction="#onCut" />
+               <MenuItem text="Copy" onAction="#onCopy" />
+               <MenuItem text="Paste" onAction="#onPaste" />
+               <MenuItem text="Delete" onAction="#onDelete"/>
+               <MenuItem text="Find" onAction="#onFind" />
+               <MenuItem text="Find in Files" onAction="#onFindInFiles" />
+               <MenuItem text="Find Next" onAction="#onFindNext" />
+               <MenuItem text="Find Previous" onAction="#onFindPrevious"/>
+               <MenuItem text="Select and find Next" onAction="#onSelectAndFindNext"/>
+               <MenuItem text="Select and find Previous" onAction="#onSelectAndFindPrevious"/>
+           </Menu>
+
+          <Menu text="Format">
+              <MenuItem text="Wordwrap" onAction="#onWordWrap" />
+              <MenuItem text="Font" onAction="#onFont" />
+          </Menu>
+
+          <Menu text="View">
+              <MenuItem text="Zoom" onAction="#onZoom" />
+              <MenuItem text="Status bar" onAction="#onStatusBar"/>
+          </Menu>
+
+          <Menu text="Help">
+              <MenuItem text="View Help" onAction="#onViewHelp"/>
+              <MenuItem text="Send Feedback" onAction="#onSendFeedback"/>
+              <MenuItem text="About" onAction="#onAbout"/>
+          </Menu>
+      </MenuBar>
+   </top>
+
+   <bottom>
+      <HBox prefHeight="63.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <TextArea fx:id="areaText" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
