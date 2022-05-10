@@ -1,4 +1,4 @@
-package sample;
+package TextEditor;
 
 import java.nio.file.Path;
 import java.util.List;

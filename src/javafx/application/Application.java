@@ -1,9 +1,5 @@
 
 package javafx.application;
-
-
-
-
 import com.sun.javafx.application.LauncherImpl;
 import com.sun.javafx.application.ParametersImpl;
 import com.sun.javafx.application.PlatformImpl;
@@ -13,8 +9,6 @@ import javafx.application.Preloader.PreloaderNotification;
 import javafx.stage.Stage;
 
 public abstract class Application {
-    public static final String STYLESHEET_CASPIAN = "CASPIAN";
-    public static final String STYLESHEET_MODENA = "MODENA";
     private HostServices hostServices = null;
     private static String userAgentStylesheet = null;
 
@@ -22,6 +16,17 @@ public abstract class Application {
         LauncherImpl.launchApplication(var0, var1);
     }
 
+
+    public Application() {
+    }
+
+    public void init() throws Exception {
+    }
+
+    public abstract void start(Stage var1) throws Exception;
+
+    public void stop() throws Exception {
+    }
     public static void launch(String... var0) {
         StackTraceElement[] var1 = Thread.currentThread().getStackTrace();
         boolean var2 = false;
@@ -61,59 +66,6 @@ public abstract class Application {
         }
     }
 
-    public Application() {
-    }
-
-    public void init() throws Exception {
-    }
-
-    public abstract void start(Stage var1) throws Exception;
-
-    public void stop() throws Exception {
-    }
-
-    public final HostServices getHostServices() {
-        synchronized(this) {
-            if (this.hostServices == null) {
-                this.hostServices = new HostServices(this);
-            }
-
-            return this.hostServices;
-        }
-    }
-
-    public final Application.Parameters getParameters() {
-        return ParametersImpl.getParameters(this);
-    }
-
-    public final void notifyPreloader(PreloaderNotification var1) {
-        LauncherImpl.notifyPreloader(this, var1);
-    }
-
-    public static String getUserAgentStylesheet() {
-        return userAgentStylesheet;
-    }
-
-    public static void setUserAgentStylesheet(String var0) {
-        userAgentStylesheet = var0;
-        if (var0 == null) {
-            PlatformImpl.setDefaultPlatformUserAgentStylesheet();
-        } else {
-            PlatformImpl.setPlatformUserAgentStylesheet(var0);
-        }
-
-    }
-
-    public abstract static class Parameters {
-        public Parameters() {
-        }
-
-        public abstract List<String> getRaw();
-
-        public abstract List<String> getUnnamed();
-
-        public abstract Map<String, String> getNamed();
-    }
 
 
 }

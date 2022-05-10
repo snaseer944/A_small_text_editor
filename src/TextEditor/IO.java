@@ -1,10 +1,10 @@
-package sample;
+package TextEditor;
 
-public class IOResult <T> {
+public class IO <T> {
     private T data;
     private boolean correct;
 
-    public IOResult(boolean correct, T data) {
+    public IO(boolean correct, T data) {
         this.correct = correct;
         this.data = data;
     }

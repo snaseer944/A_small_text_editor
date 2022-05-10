@@ -1,0 +1,23 @@
+.header-section {
+    -fx-padding: 10px;
+    -fx-font-size: 20px;
+    -fx-background-color: Black;
+    -fx-cursor: hand;
+    -fx-border-color: transparent #E8E8E8 transparent transparent;
+}
+
+.areaText{
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 30px;
+}
+
+.TextArea {
+
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 16px;
+    -fx-cursor: hand;
+    -fx-background-color: Black;
+}
+.header-section1 {
+    -fx-background-color: Grey;
+   }
